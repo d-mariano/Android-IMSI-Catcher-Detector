@@ -158,9 +158,9 @@ public class AIMSICDDbAdapter {
      * @param context   Tables that can be used in:  backupDB() and restoreDB()
      */
     public AIMSICDDbAdapter(Context context) {
-        mContext = context;
+        mContext = context.getApplicationContext();
         FOLDER = mContext.getExternalFilesDir(null) + File.separator; //e.g. /storage/emulated/0/Android/data/com.SecUpwN.AIMSICD/
-        mDbHelper = new DbHelper(context);
+        mDbHelper = new DbHelper(mContext);
         mTables = new String[]{
                 //  Old...
                 LOCATION_TABLE,
@@ -1145,7 +1145,7 @@ public class AIMSICDDbAdapter {
             Log.e(TAG, mTAG + ":dumpDB() Failed to export DB dump file: " + e);
         }
         Log.i(TAG, mTAG + ":dumpDB() Database dumped to: " + file);
-
+        
     }
 
 
