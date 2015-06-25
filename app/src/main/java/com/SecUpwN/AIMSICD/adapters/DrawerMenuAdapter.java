@@ -30,6 +30,7 @@ public class DrawerMenuAdapter extends ArrayAdapter<NavDrawerItem> {
     private final LayoutInflater inflater;
     private final View.OnClickListener mInfoButtonListener;
     private final Animation mBounceHelpButtonAnimation;
+
     private final Context context;
  
     @SuppressLint("ShowToast")
